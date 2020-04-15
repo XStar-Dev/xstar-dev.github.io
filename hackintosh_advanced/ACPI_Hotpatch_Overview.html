@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ACPI 热补丁概述 | XStar-Dev&#39;s Blog</title>
+    <meta name="description" content="Enjoy programming and be pleased to share">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.1c117941.css" as="style"><link rel="preload" href="/assets/js/app.132a4ad5.js" as="script"><link rel="preload" href="/assets/js/2.95e26bf5.js" as="script"><link rel="preload" href="/assets/js/6.bc7778eb.js" as="script"><link rel="prefetch" href="/assets/js/10.8ef54cef.js"><link rel="prefetch" href="/assets/js/11.8bf44787.js"><link rel="prefetch" href="/assets/js/12.848c3ebe.js"><link rel="prefetch" href="/assets/js/13.76f98ffa.js"><link rel="prefetch" href="/assets/js/14.6edb86e1.js"><link rel="prefetch" href="/assets/js/15.ac3c4a67.js"><link rel="prefetch" href="/assets/js/16.b9d82f05.js"><link rel="prefetch" href="/assets/js/3.13478820.js"><link rel="prefetch" href="/assets/js/4.2daac6a2.js"><link rel="prefetch" href="/assets/js/5.e4a176ac.js"><link rel="prefetch" href="/assets/js/7.80beb563.js"><link rel="prefetch" href="/assets/js/8.5445c4e2.js"><link rel="prefetch" href="/assets/js/9.bfc00543.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1c117941.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">XStar-Dev's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="黑苹果" class="dropdown-title"><span class="title">黑苹果</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hackintosh_primary/" class="nav-link">
+  基础教程
+</a></li><li class="dropdown-item"><!----> <a href="/hackintosh_advanced/" class="nav-link router-link-active">
+  进阶教程
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  技术杂谈
+</a></div><div class="nav-item"><a href="https://www.github.com/XStar-Dev" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="黑苹果" class="dropdown-title"><span class="title">黑苹果</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hackintosh_primary/" class="nav-link">
+  基础教程
+</a></li><li class="dropdown-item"><!----> <a href="/hackintosh_advanced/" class="nav-link router-link-active">
+  进阶教程
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  技术杂谈
+</a></div><div class="nav-item"><a href="https://www.github.com/XStar-Dev" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/hackintosh_advanced/AppleALC_Custom_For_AppleHDA.html" class="sidebar-link">AppleALC 声卡仿冒教程</a></li><li><a href="/hackintosh_advanced/ACPI_Hotpatch_Overview.html" class="active sidebar-link">ACPI 热补丁概述</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/hackintosh_advanced/ACPI_Hotpatch_Overview.html#什么是-acpi-热补丁" class="sidebar-link">什么是 ACPI 热补丁</a></li><li class="sidebar-sub-header"><a href="/hackintosh_advanced/ACPI_Hotpatch_Overview.html#acpi-热补丁通常用于哪些地方" class="sidebar-link">ACPI 热补丁通常用于哪些地方</a></li><li class="sidebar-sub-header"><a href="/hackintosh_advanced/ACPI_Hotpatch_Overview.html#acpi-热补丁方法" class="sidebar-link">ACPI 热补丁方法</a></li></ul></li><li><a href="/hackintosh_advanced/Guide_For_Battery_Hotpatch.html" class="sidebar-link">笔记本电池热补丁教程</a></li><li><a href="/hackintosh_advanced/Laptop_I2C_Device_GPIO.html" class="sidebar-link">笔记本 I2C 触摸设备 GPIO 中断实现教程</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="acpi-热补丁概述"><a href="#acpi-热补丁概述" class="header-anchor">#</a> ACPI 热补丁概述</h1> <h2 id="什么是-acpi-热补丁"><a href="#什么是-acpi-热补丁" class="header-anchor">#</a> 什么是 ACPI 热补丁</h2> <p>通过引导程序对本机的 <code>ACPI</code> 表二进制内容进行更名，实现禁用 <code>ACPI</code> 表中某个设备（<code>Device</code>）下的方法（<code>Method</code>）或者变量名，同时新建 SSDT 补丁重写相关代码，达到重定义的作用</p> <h2 id="acpi-热补丁通常用于哪些地方"><a href="#acpi-热补丁通常用于哪些地方" class="header-anchor">#</a> ACPI 热补丁通常用于哪些地方</h2> <ul><li><code>EmbeddedControl</code>（嵌入式控制器）：该 <code>ACPI</code> 设备下通常具备电池、光线传感器、加速度传感器、<code>EC Query</code> 方法映射等定义</li> <li><code>I2C</code> 总线：该 <code>ACPI</code> 设备下通常具备触摸设备及人体学输入设备相关传感器（如指纹传感器）定义</li> <li>睡眠唤醒相关修复：<code>PNP0C0E</code>（睡眠按钮）、<code>PNP0C0D</code>（笔记本盖子）、<code>_PTS</code>（睡眠前执行）、<code>_WAK</code>（唤醒后执行）</li></ul> <h2 id="acpi-热补丁方法"><a href="#acpi-热补丁方法" class="header-anchor">#</a> ACPI 热补丁方法</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>热补丁的本质还是实现对 ACPI 某个设备或者方法的重定义，以便与 macOS 兼容</p></div> <ul><li><p>第一步，更名</p> <ul><li><p>更名通常是针对 <code>Method</code> 来使用的，它在 <code>ACPI</code> 中的定义与 <code>HEX</code> 代码对应关系如下：</p> <ul><li><code>Method(xxxx,a,N)</code> --&gt; <code>xxxx</code> 的十六进制代码 + <code>a</code> 的十六进制代码，最后两位范围为 <code>00</code> - <code>07</code></li> <li><code>Method(xxxx,b,S)</code> --&gt; <code>xxxx</code> 的十六进制代码 + (<code>b+8</code>) 的十六进制代码，最后两位范围为 <code>08</code> - <code>0F</code></li></ul></li> <li><p>根据上述关系，给出如下示例：</p> <div class="language-text extra-class"><pre class="language-text"><code>  Method (MHPF,1,N) --&gt; `4D485046 01`
+  Method (BTST,2,S) --&gt; `42545354 0A`
+</code></pre></div></li> <li><p>为了使原来的方法失效，我可以把 MHPF 更名为 XHPF，X 对应的 HEX 代码是 58，则完整的更名示例如下</p> <div class="language-text extra-class"><pre class="language-text"><code>Comment change MHPF,1,N to XHPF
+Find    4D485046 01
+Rplace  58485046 01
+</code></pre></div></li></ul></li> <li><p>第二步，重定义</p> <ul><li><p>在建立的 SSDT 补丁中，将已经更名的原始代码复制过来，并按照需求进行改动</p></li> <li><p>补充上操作系统判断，使整个热补丁只在 macOS 下生效，示例格式如下</p> <div class="language-Swift extra-class"><pre class="language-swift"><code><span class="token builtin">Method</span> <span class="token punctuation">(</span><span class="token constant">MHPF</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">NotSerialized</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token builtin">If</span> <span class="token punctuation">(</span><span class="token function">_OSI</span><span class="token punctuation">(</span><span class="token string">&quot;Darwin&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        ···
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">XHPF</span><span class="token punctuation">(</span><span class="token builtin">Arg0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>备注：若原来的 <code>Method</code> 定义了参数，则在回调时应该加上参数；若原来的代码存在 <code>Return</code> 语句，则回调时应该以 <code>Return</code> 的形式回调原始代码</p></li></ul></li></ul> <div class="custom-block warning"><p class="custom-block-title">注意事项</p> <p>当 ACPI 更名涉及到 <code>_STA</code>、<code>_CRS</code> 等在原始 ACPI 中反复出现的方法时，若使用的是 CLOVER 引导，则可以利用 TgtBridge 限定修改区域；若使用的是 OpenCore 引导，则需要使用 skip 和 count 计数方法来精确定位到需要修改的地方，这种方法难度较大，可以考虑采取拉长 HEX 代码的方法确保唯一性（利用 HEXFriend 在 ACPI 中找到你需要更名的那段代码然后将其上下文包含进来进行搜索确认是否是唯一的）</p></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/hackintosh_advanced/AppleALC_Custom_For_AppleHDA.html" class="prev">
+        AppleALC 声卡仿冒教程
+      </a></span> <span class="next"><a href="/hackintosh_advanced/Guide_For_Battery_Hotpatch.html">
+        笔记本电池热补丁教程
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.132a4ad5.js" defer></script><script src="/assets/js/2.95e26bf5.js" defer></script><script src="/assets/js/6.bc7778eb.js" defer></script>
+  </body>
+</html>

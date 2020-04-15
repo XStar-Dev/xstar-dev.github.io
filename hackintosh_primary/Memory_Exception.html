@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>内存错误之 Slide 计算 | XStar-Dev&#39;s Blog</title>
+    <meta name="description" content="Enjoy programming and be pleased to share">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.1c117941.css" as="style"><link rel="preload" href="/assets/js/app.132a4ad5.js" as="script"><link rel="preload" href="/assets/js/2.95e26bf5.js" as="script"><link rel="preload" href="/assets/js/13.76f98ffa.js" as="script"><link rel="prefetch" href="/assets/js/10.8ef54cef.js"><link rel="prefetch" href="/assets/js/11.8bf44787.js"><link rel="prefetch" href="/assets/js/12.848c3ebe.js"><link rel="prefetch" href="/assets/js/14.6edb86e1.js"><link rel="prefetch" href="/assets/js/15.ac3c4a67.js"><link rel="prefetch" href="/assets/js/16.b9d82f05.js"><link rel="prefetch" href="/assets/js/3.13478820.js"><link rel="prefetch" href="/assets/js/4.2daac6a2.js"><link rel="prefetch" href="/assets/js/5.e4a176ac.js"><link rel="prefetch" href="/assets/js/6.bc7778eb.js"><link rel="prefetch" href="/assets/js/7.80beb563.js"><link rel="prefetch" href="/assets/js/8.5445c4e2.js"><link rel="prefetch" href="/assets/js/9.bfc00543.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1c117941.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">XStar-Dev's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="黑苹果" class="dropdown-title"><span class="title">黑苹果</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hackintosh_primary/" class="nav-link router-link-active">
+  基础教程
+</a></li><li class="dropdown-item"><!----> <a href="/hackintosh_advanced/" class="nav-link">
+  进阶教程
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  技术杂谈
+</a></div><div class="nav-item"><a href="https://www.github.com/XStar-Dev" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="黑苹果" class="dropdown-title"><span class="title">黑苹果</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hackintosh_primary/" class="nav-link router-link-active">
+  基础教程
+</a></li><li class="dropdown-item"><!----> <a href="/hackintosh_advanced/" class="nav-link">
+  进阶教程
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  技术杂谈
+</a></div><div class="nav-item"><a href="https://www.github.com/XStar-Dev" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/hackintosh_primary/Hackintosh_Bootloader_Config.html" class="sidebar-link">黑苹果引导配置教程</a></li><li><a href="/hackintosh_primary/Memory_Exception.html" class="active sidebar-link">内存错误之 Slide 计算</a></li><li><a href="/hackintosh_primary/Common_Hardware_Driver_Scheme.html" class="sidebar-link">常用硬件驱动方案选择</a></li><li><a href="/hackintosh_primary/USB_Port_Custom.html" class="sidebar-link">USB 端口定制教程</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="内存错误之-slide-计算"><a href="#内存错误之-slide-计算" class="header-anchor">#</a> 内存错误之 Slide 计算</h1> <p>KASLR (Kernel Address Space Layout Randomization)：内核地址空间布局随机化，是 <code>macOS</code> 所使用的一项内存管理技术，它会在内存基址上加一个 <code>Slide</code> 值，用于保护内核安全。</p> <blockquote><p><code>Slide</code> 的有效范围是 8 - 255，转化为 16 进制就是 8 - FF ，乘 200000（16 进制）得出的内存基址 <code>Start</code> 范围为 1000000 - 1FE00000</p></blockquote> <p>我们通常说的内存错误指的是引导过程马上卡住并出现了下列错误代码，大部分情况下可以通过更换内存补丁解决。但在一些台式机上，有时候换内存补丁也无法解决，由于台式机硬件自由度高，内存补丁可能无法根据我们的硬件正确的修复内存问题，这个时候就需要计算 <code>Slide</code> 值来启用 <code>KASLR</code> 内存管理技术了。</p> <div class="language-Shell extra-class"><pre class="language-shell"><code>Error allocating 0x0x116F6 pages at 0x00000000093eb000 alloc <span class="token builtin class-name">type</span> <span class="token number">2</span>
+</code></pre></div><p>注意上述代码中的 0x116F6，是出错的 <code>Page</code> 值，接下来我们将利用这个值来确定需要提供给 <code>KASLR</code> 的内存基址 <code>Start</code> 的值</p> <p>进入 <code>clover</code>，打开 <code>UEFI Shell 64</code> 界面，输入 <code>memmap -b</code>，找到第一个 <code>Start</code> 大于 1000000（对应 <code>Slide</code> 最小值 8）且 <code>Page</code> 值大于 0x116F6 （出错的 <code>Page</code> 值） 的 <code>Available</code> 类型数据，如下所示</p> <div class="language-Shell extra-class"><pre class="language-shell"><code>Available 00000000 1000B000 00000000 5F04FFFF 00000000 0004F045 00000000 0000000F
+</code></pre></div><p>可见 1000B000 在这个范围内，使用十六进制计算器用这个值除 200000（16 进制）得出的值转为十进制向上取整即可</p> <p>例如 1000B000（十六进制）/ 200000（十六进制）= 128.02（十进制）向上取整为 129，接下来我们将 <code>slide=129</code> 添加到引导参数中，问题基本上都能解决</p> <p>在线十六进制计算器：<a href="http://www.99cankao.com/digital-computation/hex-calculator.php" target="_blank" rel="noopener noreferrer">http://www.99cankao.com/digital-computation/hex-calculator.php<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/hackintosh_primary/Hackintosh_Bootloader_Config.html" class="prev">
+        黑苹果引导配置教程
+      </a></span> <span class="next"><a href="/hackintosh_primary/Common_Hardware_Driver_Scheme.html">
+        常用硬件驱动方案选择
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.132a4ad5.js" defer></script><script src="/assets/js/2.95e26bf5.js" defer></script><script src="/assets/js/13.76f98ffa.js" defer></script>
+  </body>
+</html>
